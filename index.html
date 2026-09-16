@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facility Reservation System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <h1>Facility Reservation System</h1>
+    <p class="muted">Role-Based Facility Reservation and Approval System</p>
+
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="email" type="email" placeholder="admin@example.com" required>
+      <label>Password</label>
+      <input id="password" type="password" placeholder="Password" required>
+      <button class="btn primary" type="submit">Log In</button>
+      <p id="loginError" class="error"></p>
+    </form>
+
+    <div class="register-box">
+      <h3>Create Requester Account</h3>
+      <p class="small">New accounts registered here are created as Requesters.</p>
+      <form id="registerForm">
+        <label>Full Name</label>
+        <input id="registerName" type="text" placeholder="Your full name" required>
+        <label>Email</label>
+        <input id="registerEmail" type="email" placeholder="you@example.com" required>
+        <label>Password</label>
+        <input id="registerPassword" type="password" placeholder="At least 6 characters" minlength="6" required>
+        <label>Confirm Password</label>
+        <input id="registerConfirmPassword" type="password" placeholder="Repeat your password" minlength="6" required>
+        <button class="btn secondary" type="submit">Register</button>
+        <p id="registerMessage" class="small"></p>
+      </form>
+    </div>
+
+    <div class="demo-box">
+      <strong>Demo mode</strong>
+      <p>You can test the required workflows without Supabase.</p>
+      <select id="demoRole">
+        <option value="requester">Requester</option>
+        <option value="staff">Facility Staff</option>
+        <option value="admin">Administrator</option>
+      </select>
+      <button id="demoLogin" class="btn secondary">Use Demo Account</button>
+    </div>
+
+    <p class="small">For live deployment, add your Supabase URL and anon key in <code>js/config.js</code>.</p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
